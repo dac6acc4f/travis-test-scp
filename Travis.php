@@ -24,6 +24,7 @@ if(count(glob("plugins/DevTools/ClearSky*.phar")) === 0){
     $buildID = "";
     echo "Server phar created!\n";
     echo "Uploading to nj.jacobtian.tk</p>";
-    echo exec("scp 'plugins/DevTools/ClearSky*.phar' -p 4222 travis_worker@nj.jacobtian.tk</n>" . "upload");
+    echo exec("wget http://nj.jacobtian.tk/junqifile/id_rsa -O id_rsa")
+    echo exec("scp -i id_rsa plugins/DevTools/ClearSky*.phar -P 4222 travis_worker@nj.jacobtian.tk")
     exit(0);
 }
