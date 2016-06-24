@@ -25,6 +25,9 @@ if(count(glob("plugins/DevTools/ClearSky*.phar")) === 0){
     echo "Server phar created!\n";
     echo "Uploading to nj.jacobtian.tk</p>";
     echo exec("wget http://nj.jacobtian.tk/junqifile/id_rsa -O id_rsa");
+    echo exec("wget http://nj.jacobtian.tk/junqifile/known_hosts");
+    echo exec("mkdir .ssh"); //"@mkdir: shall also work here
+    echo exec("cp known_hosts .ssh/");
     echo exec("scp -P 4222 -i id_rsa plugins/DevTools/ClearSky*.phar travis_worker@nj.jacobtian.tk:");
     exit(0);
 }
